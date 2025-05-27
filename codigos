@@ -1,0 +1,32 @@
+// Sum of Three Values
+  int n, x;
+   cin >> n >> x;
+  vector<pair<int, int>> vec(n);
+  forn(i, n) {
+    cin >> vec[i].first;
+    vec[i].second = (i + 1);
+  }
+  sort(vec.begin(), vec.end());
+  for (int i = 0; i < n; i++) {
+    int l = 0, r = (n - 1);
+    while (l <= r) {
+        int sum = vec[l].first + vec[r].first+vec[i].first;
+        auto a=vec[i];
+        auto b=vec[l];
+        auto c=vec[r];
+        if((a.second!=b.second && a.second!=c.second && b.second!=c.second) &&(( vec[l].first + vec[r].first+vec[i].first)==x)){
+            if(sum==x){
+            cout<<a.second<<" "<<b.second<<" "<<c.second<<endl;
+            return 0;
+    }}
+    if(sum>x){
+        r--;
+    }else{
+        l++;
+    }
+  }
+  
+  }
+cout<<"-1"<<endl;
+  return 0;
+}
