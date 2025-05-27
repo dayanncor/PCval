@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define forn(i, n) for (int i = 0; i < n; i++)
+using namespace std;
+#define int int64_t
+ 
+void agregar(char c, int &cb, int &cw) {
+  if (c == 'W') {
+    cw++;
+  } else {
+    cb++;
+  }
+}
+void eliminar(char c, int &cb, int &cw) {
+  if (c == 'W') {
+    cw--;
+  } else {
+    cb--;
+  }
+}
+main() {
+    ios_base::sync_with_stdio(false);
+cin.tie(0);
+cout.tie(0);
+    int t;
+  string s;
+  cin >> t;
+  while (t--) {
+    int n, k, cb=0, cw=0, l=0;
+    cin >> n >> k;
+    int mini=n;
+    cin >> s;
+    forn(i, n) { 
+        agregar(s[i], cb, cw); 
+        if((cb+cw)>=k){
+          mini=min(mini, cw);
+          eliminar(s[l], cb, cw);
+            l++;
+             
+        }
+        }
+        cout<<mini<<endl;
+ 
+        }
+ 
+  
+  return 0;
+}
