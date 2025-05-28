@@ -7,8 +7,15 @@ template<class T> struct Stack {
     stack<pair<T, T>> s;
 
     void push(T x) {
-        if (!s.size() s.push({ x, x });
-        else s.emplace(x, min(s.top().second, x));
+/*
+Si la pila está vacía (sz(s) da 0), se guarda (x, x) porque el mínimo hasta ahora es el mismo valor x.
+Si no está vacía:
+s.top().second es el mínimo actual hasta ahora.
+min(s.top().second, x) calcula el nuevo mínimo al incluir x.
+Se agrega el nuevo par (x, nuevoMin).
+*/
+       if (!s.size() s.push({ x, x });
+       else s.emplace(x, min(s.top().second, x));
     }
     T top() { return s.top().first; }
     T pop() {
