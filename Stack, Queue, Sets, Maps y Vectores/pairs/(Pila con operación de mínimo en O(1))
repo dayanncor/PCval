@@ -1,0 +1,21 @@
+ /*permite obtener el mínimo actual en la pila en tiempo constante (O(1)).*/
+ /*
+ Define una estructura de tipo plantilla llamada Stack, que puede almacenar cualquier tipo de dato T (como int, float, etc.)
+ */
+ 
+template<class T> struct Stack {
+    stack<pair<T, T>> s;
+
+    void push(T x) {
+        if (!s.size() s.push({ x, x });
+        else s.emplace(x, min(s.top().second, x));
+    }
+    T top() { return s.top().first; }
+    T pop() {
+        T ans = s.top().first;
+        s.pop();
+        return ans;
+    }
+    int size() { return sz(s); }
+    T min() { return s.top().second; }
+};
