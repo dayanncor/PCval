@@ -17,7 +17,7 @@ Se agrega el nuevo par (x, nuevoMin).
        if (!s.size() s.push({ x, x });
        else s.emplace(x, min(s.top().second, x));
     }
-    T top() { return s.top().first; }
+    T top() { return s.top().first; //Devuelve el último valor agregado (x)//}
     T pop() {
         T ans = s.top().first;
         s.pop();
