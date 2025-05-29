@@ -1,0 +1,23 @@
+    int t,n;
+    cin >>t;
+    int c=0, acu=0;
+    for(int i = 1; i <= t; i++){
+        c=0, acu=0;
+        cin >> n;
+        int arr[n];
+        for(int j = 0; j < n; j++){
+            cin>>arr[j];
+            if(arr[j]==0){
+            c++;
+                if(c>acu){
+                    acu=c;   } }
+            else{
+                c=0;
+            }}
+
+            cout<<acu<<endl;
+
+        }
+        return 0;
+
+    }
