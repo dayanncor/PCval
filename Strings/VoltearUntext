@@ -1,0 +1,16 @@
+//Voltear una cadena de texto con funcion
+string texto;
+    getline(cin, texto);  // Leer línea completa
+    reverse(texto.begin(), texto.end());
+    cout<< texto << endl;
+
+
+//Voltear una cadena de texto con for
+string texto, invertido = "";
+    getline(cin, texto);
+
+    for (int i = texto.size() - 1; i >= 0; --i) {
+        invertido += texto[i];
+    }
+    cout<< invertido << endl;
+
