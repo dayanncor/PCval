@@ -1,0 +1,22 @@
+bool esPalindroma(const string& palabra) {
+    int izquierda = 0;
+    int derecha = palabra.size() - 1;
+
+    while (izquierda < derecha) {
+        if (palabra[izquierda] != palabra[derecha]) {
+            return false;  // Si algún par no coincide, no es palíndroma
+        }
+        izquierda++;
+        derecha--;
+    }
+    return true;
+}
+ main() {
+    string palabra;
+    cin >> palabra;
+
+    if (esPalindroma(palabra)) {
+        cout << "La palabra es palíndroma." << endl;
+    } else {
+        cout << "La palabra NO es palíndroma." << endl;
+    }
