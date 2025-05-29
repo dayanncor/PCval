@@ -1,0 +1,43 @@
+//El código lee un texto y una lista de caracteres prohibidos, luego elimina esos caracteres del texto y muestra el
+//resultado limpio
+vector<string>split(string &in) {
+    vector<string> result;
+    istringstream iss(in);
+     string word;
+    while (iss >> word) {
+        result.push_back(word);
+    }
+    return result;
+}
+string trim(const string& str) {
+    size_t first = str.find_first_not_of(" \t\n\r\f\v");  // espacios, tabs, etc.
+    if (first == string::npos) return ""; // Solo espacios
+    size_t last = str.find_last_not_of(" \t\n\r\f\v");
+    return str.substr(first, last - first + 1);
+}
+
+main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	string tex,pal;
+    getline(cin, tex);
+	getline(cin, pal);
+    auto ese = split(tex);
+    unordered_set<char> letras(pal.begin(), pal.end());
+    string s ="";
+    bool e = letras.count(' ');
+    for (auto& x : ese) {
+        for (char c : x) {
+            if (!letras.count(c)) {
+                s+=c;  }   }
+        if(!e){
+        s+=' ';
+        }
+    }
+    auto it = unique(s.begin(), s.end());
+    s.erase(it, s.end());
+    s = trim(s);
+    cout << s;
+    return 0;
+} 
