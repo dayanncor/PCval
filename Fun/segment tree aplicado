@@ -44,9 +44,13 @@ struct STregularBracket {
 //Hijo derecho: índice idx * 2 + 1 (idx << 1 | 1), cubre [mid+1, e].
         build(idx << 1, s, (s + e) / 2, S);
         build(idx << 1 | 1, (s + e) / 2 + 1, e, S);
+//Aquí se inicializa el nodo idx con:
+//start = vecSegmentos[hijo derecho].start
+//end = vecSegmentos[hijo izquierdo].end
         vecSegmentos[idx] = { vecSegmentos[idx << 1 | 1].start, vecSegmentos[idx << 1].end };
         int dif = vecSegmentos[idx << 1].start - vecSegmentos[idx << 1 | 1].end;
         int mini = min(vecSegmentos[idx << 1].start, vecSegmentos[idx << 1 | 1].end);
+
         vecSegmentos[idx].maxLen += mini * 2 + vecSegmentos[idx << 1 | 1].maxLen + vecSegmentos[idx << 1].maxLen;
         if (dif > 0) vecSegmentos[idx].start += dif;
         else vecSegmentos[idx].end -= dif;
