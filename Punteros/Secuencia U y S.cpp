@@ -16,5 +16,4 @@ forn(i,n){
      maxi= max(maxi, cont); 
     }
    cout<<maxi<<endl;
-return 0; 
-}
+
