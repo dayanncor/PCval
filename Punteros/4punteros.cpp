@@ -14,6 +14,8 @@
             if(mp.count(x-vec[i].first-vec[j].first)){
                 auto a=vec[i].second;
                 auto b=vec[j].second;
+                /*se utiliza el first y second, para referise a las posiciones
+                del pair, first 1, second 2*/
                 auto c=mp[x-vec[i].first-vec[j].first].second;
                 auto d=mp[x-vec[i].first-vec[j].first].first;
 
@@ -29,5 +31,3 @@
         if(des==false){
             cout<<"-1"<<endl;
     }
-    return 0;
-}
