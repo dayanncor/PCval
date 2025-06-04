@@ -1,7 +1,7 @@
  /*permite obtener el mínimo actual en la pila en tiempo constante (O(1)).*/
- /*
- Define una estructura de tipo plantilla llamada Stack, que puede almacenar cualquier tipo de dato T (como int, float, etc.)
- */
+ 
+//Define una estructura de tipo plantilla llamada Stack, que puede almacenar cualquier tipo de dato T (como int, float, etc.)
+ 
  
 template<class T> struct Stack {
     stack<pair<T, T>> s;
