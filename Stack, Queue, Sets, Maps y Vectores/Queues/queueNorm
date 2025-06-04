@@ -1,9 +1,5 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define endl '\n'
-#define int int64_t
-main(){
-int t, c,q,y;
+
+int t, c, q, y;
 cin>>t;
 while(t--){
      queue<int> name; 
@@ -15,7 +11,9 @@ while(t--){
             name.push(q);
         }
         if(y==2){
-            if(!name.empty()) name.pop();
+//verifica si esta vacio, si si, borra la cola
+            if(!name.empty())
+        name.pop();
         }
             if (y == 3) {
                 if (!name.empty()) {
