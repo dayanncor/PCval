@@ -2,8 +2,8 @@
 La subsecuencia creciente más larga (LIS) es aquella donde los elementos están en orden estrictamente creciente
 /*(cada uno mayor que el anterior), y la longitud de esta subsecuencia es la mayor posible.
 
-//upper_bound -->devuelve un iterador a la primera posición estrictamente mayor que el valor.
-//lower_bound -->devuelve un iterador a la primera posición mayor o igual.
+//upper_bound -->devuelve un iterador a la primera posicion estrictamente mayor que el valor.
+//lower_bound -->devuelve un iterador a la primera posicion mayor o igual.
 
 int lis(vector<int>& a) {
     vector<int>vec;
