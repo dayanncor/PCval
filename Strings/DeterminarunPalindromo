@@ -4,7 +4,7 @@ bool esPalindroma(const string& palabra) {
 
     while (izquierda < derecha) {
         if (palabra[izquierda] != palabra[derecha]) {
-            return false;  // Si algún par no coincide, no es palíndroma
+            return false;  // Si algn par no coincide, no es palndroma
         }
         izquierda++;
         derecha--;
@@ -16,7 +16,7 @@ bool esPalindroma(const string& palabra) {
     cin >> palabra;
 
     if (esPalindroma(palabra)) {
-        cout << "La palabra es palíndroma." << endl;
+        cout << "La palabra es palindroma." << endl;
     } else {
-        cout << "La palabra NO es palíndroma." << endl;
+        cout << "La palabra NO es palindroma." << endl;
     }
