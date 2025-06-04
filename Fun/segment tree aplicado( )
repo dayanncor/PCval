@@ -1,17 +1,5 @@
  //árbol de segmentos especializado para resolver consultas sobre la longitud de la subsecuencia más larga de 
 //paréntesis balanceados/
-#include <bits/stdc++.h>
-using namespace std;
-#define endl     '\n' 
-#define f        first
-#define s        second
-#define ins      insert
-#define pb       push_back
-#define eb       emplace_back
-#define sz(x)    int((x).size())
-#define all(x)   begin(x), end(x)
-#define forn(i, n) for (int i = 0; i < n; ++i)
-#define int int64_t
 
 struct node {
     int start, end, maxLen;
@@ -28,7 +16,7 @@ struct STregularBracket {
     }
 
     void build(int idx, int s, int e, string& S) { 
-//idx: índice del nodo actual en el árbol (almacenado en el vector seg).
+//idx: indice del nodo actual en el arbol (almacenado en el vector seg).
 //s, e: el rango [s, e] de la cadena que este nodo cubre.
 //S: la cadena de paréntesis (se pasa por referencia para eficiencia).
         if (s == e) {
@@ -47,6 +35,7 @@ struct STregularBracket {
 //Aquí se inicializa el nodo idx con:
 //start = vecSegmentos[hijo derecho].start
 //end = vecSegmentos[hijo izquierdo].end
+
         vecSegmentos[idx] = { vecSegmentos[idx << 1 | 1].start, vecSegmentos[idx << 1].end };
         int dif = vecSegmentos[idx << 1].start - vecSegmentos[idx << 1 | 1].end;
         int mini = min(vecSegmentos[idx << 1].start, vecSegmentos[idx << 1 | 1].end);
