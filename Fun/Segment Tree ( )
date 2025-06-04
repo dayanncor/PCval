@@ -13,13 +13,13 @@ struct STregularBracket {
         S = "0" + S;
         size = s.size();
 
-/*El tamaño del árbol se define como 4 veces el tamaño del string (es estandar).*/
+/*El tamaño del arbol se define como 4 veces el tamaño del string (es estandar).
 
         seg.resize(4 * size);
         build(1, 1, size - 1, S);
     }
-/* funcion contructora build la cual construye el árbol recursivamente
-desde el índice s hasta e en la posición idx del árbol */
+/* funcion contructora build la cual construye el arbol recursivamente
+desde el índice s hasta e en la posicion idx del arbol */
 
     void build(int idx, int s, int e, string& S) {
         if (s == e) {
