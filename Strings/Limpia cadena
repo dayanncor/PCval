@@ -1,4 +1,4 @@
-//El código lee un texto y una lista de caracteres prohibidos, luego elimina esos caracteres del texto y muestra el
+//El cdigo lee un texto y una lista de caracteres prohibidos, luego elimina esos caracteres del texto y muestra el
 //resultado limpio
 vector<string>split(string &in) {
     vector<string> result;
