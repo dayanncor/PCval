@@ -12,6 +12,7 @@ name.front(); //devuelve el primer valor
 name.back(); //devuelve el ultimo valor 
 name.insert(pos, val); // inserta un valor en una posicion espeficica
 name.erase(vec.begin() + pos); //elimina un elemento de una posicion especifica
+//"vec.erase(vec.begin()+i)" y el for "for(int i = 0; i < sz(vec);)" si no se pone asi da error :(
 name.erase(star,end); //elimina los elementos de ese rango
 name.resize(n); //cambia el tamanio del vector a n elementos
 name.assign(n,val); //Asigna n elementos con valor val
