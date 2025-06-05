@@ -21,3 +21,21 @@ begin()/end() // retorna los iteradores del inicio y final
 rbegin()/rend() //Iteradores al inverso, para recorrer de atras hacia adelante
 name.emplace(pos,arg); //inserta una posicion y un valor
 name.emplace_back(); //Inserta valores al final, creando posiciones para este
+
+
+
+//Funcion erase 
+int n;
+cin>>n;
+vector<int>vec(n);
+forn(i,n) cin>>vec[i];
+for(int i = 0; i < sz(vec);){
+if(vec[i]%2==0){
+    vec.erase(vec.begin()+i);
+}else{
+    i++;
+}
+}
+for(int num : vec){
+    cout<<num<<" ";
+}
