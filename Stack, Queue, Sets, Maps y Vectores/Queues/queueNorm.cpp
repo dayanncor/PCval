@@ -10,7 +10,7 @@ while(t--) {
 			name.push(q);
 		}
 		if(y==2) {
-//verifica si esta vacio, si si, borra la cola
+//verifica si esta vacio, si no, borra la cola
 			if(!name.empty())
 				name.pop();
 		}
