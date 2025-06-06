@@ -1,6 +1,7 @@
 //Tipos de queue
 queue<int>name;
-priority_queue<int>name2;
+priority_queue<int>name2; //Trabaja con valores maximos
+priority_queue<int, vector<int>, greater<int>> name; //trabaja con valores minimos
 deque<int>name;
 queue<pair<int, deque<int>>> name;
 queue<pair<int, list<int>>> name;
