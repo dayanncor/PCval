@@ -9,7 +9,7 @@ struct STree {
         build(1, 0, n - 1, a);
     }
 
-    T oper(T a, T b) {return a + b; }
+    T oper(T a, T b) {return a + b; } //aqui se modifica la operacion, ya sea max, min o sumas ya asi
 
     void build(int v, int tl, int tr, vector<T>& a) {
         if (tl == tr) {
