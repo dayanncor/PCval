@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include <fstream>
+using namespace std;
+#define all(x) x.begin(), x.end()
+#define endl '\n'
+#define forn(i, n) for (int i = 0; i < n; ++i)
+#define int int64_t
+main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	int t;
+    cin>>t;
+    while(t--){
+        int n; cin >>n;
+        int d = 1;
+        while(d*(d+1)/2<n){ //formula
+            d++;
+        }
+        int t = d*(d-1)/2+1;
+        int x = n-t;
+        int num,den;
+        if(d%2==0){
+            num = 1+x;
+            den = d-x;
+        }else{
+            den = 1+x;
+            num = d-x;
+        }
+        cout<<"TERM "<<n<<" IS "<<num<<"/"<<den<<endl;
+    }
+	return 0;
+}
