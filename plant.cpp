@@ -4,6 +4,7 @@
 #define endl '\n'
 #define ll long long
 #define sz(x)    int((x).size())
+#define each(i,x) for(auto &&i:x)
 using namespace std;
 #define int int64_t
 main() {
