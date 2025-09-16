@@ -1,0 +1,25 @@
+import math
+import sys
+input = sys.stdin.readline
+write = sys.stdout.write
+
+
+def main():
+    n = int(input())
+    vec = list(map(int, input().split()))
+
+    for i in range(n):
+        max_idx = i
+        for j in range(i + 1, n):
+            if vec[j] > vec[max_idx]:
+                max_idx = j
+        
+        vec[i], vec[max_idx] = vec[max_idx], vec[i]
+
+    print(" ".join(map(str, vec)))
+
+
+if __name__ == '__main__':
+    main()
+          
+
