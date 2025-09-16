@@ -1,0 +1,20 @@
+import sys
+input = sys.stdin.readline
+
+def main():
+    n = int(input())
+    est = []
+    for _ in range(n):
+        l, c = input().split()
+        c = int(c)
+        pos = len(est)
+        for i in range(len(est)):
+            if est[i][1] > c:
+                pos = i
+                break
+        est.insert(pos, (l, c))  
+    for l, c in est:
+        print(l, c)
+
+if __name__ == "__main__":
+    main()
