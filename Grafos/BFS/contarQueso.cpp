@@ -1,12 +1,4 @@
-#include <bits/stdc++.h>
-#define forn(i, n) for (int i = 0; i < n; i++)
-#define all(x) x.begin(), x.end()
-#define endl '\n'
-#define ll long long
-#define sz(x)    int((x).size())
-#define each(i,x) for(auto &&i:x)
-using namespace std;
-#define int int64_t
+//Busca contar cuantas Q  adyacentes a H se deben eliminar (0, 1 o 2) para que las Q dejen de estar todas conectadas entre si
 int n, m;
 vector<string> vec;
 int hx, hy; 
@@ -21,6 +13,7 @@ bool bfs(vector<string> g) {
     vis[hx][hy] = true;
  
     while(!q.empty()) {
+     
         auto [x,y] = q.front(); q.pop();
         forn(k,4){
             int nx=x+dx[k], ny=y+dy[k];
@@ -41,8 +34,6 @@ bool bfs(vector<string> g) {
     }
     return false; 
 }
- 
- 
  main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -59,15 +50,13 @@ bool bfs(vector<string> g) {
  
     int totalQ=0;
     for(auto &row: vec)
-        totalQ += count(row.begin(), row.end(), 'Q');
- 
-   
+     //cuenta cuantas veces aparece un valor especifico dentro de un rango 
+        totalQ += count(all(row), 'Q');   
  
     if(bfs(vec)){
         cout << 0 << endl;
         return 0;
-    }
- 
+    } 
     forn(k,4){
         int nx=hx+dx[k], ny=hy+dy[k];
         if(nx<0||ny<0||nx>=n||ny>=m) continue;
