@@ -1,5 +1,7 @@
 //Cuenta las ocurrencias del string p en el string s.
 
+
+//devuelve el tamaño de la subcadena comun mas larga
 vector<int> prefix_function(string& s) {
     int n = s.size();
     vector<int> pf(n);
