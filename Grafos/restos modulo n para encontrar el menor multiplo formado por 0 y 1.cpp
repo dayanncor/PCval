@@ -1,14 +1,25 @@
-#include <bits/stdc++.h>
-#define forn(i, n) for (int i = 0; i < n; i++)
-#define forne(i, x, n) for (int i = x; i <= n; i++)
-#define all(x) x.begin(), x.end()
-#define endl '\n'
-#define pb push_back
-#define ll long long
-#define sz(x) int((x).size())
-#define each(i, x) for (auto &&i : x)
-using namespace std;
-#define int int64_t
+/*
+Se nos da un entero positivo n y debemos encontrar el menor multiplo de n cuyo numero decimal
+este formado solo por los digitos 0 y 1
+empiece con 1
+y sea divisible exactamente por n
+
+El problema no pide convertir a binario
+el numero sigue siendo decimal solo que con digitos restringidos
+
+El principal desafio es que el numero buscado puede tener muchisimos digitos por lo que no cabe
+en ningun tipo numerico y no puede generarse directamente
+
+
+En lugar de construir el numero completo se trabaja unicamente con su resto al dividirlo entre n
+Esto es posible porque para cualquier numero solo existen n restos posibles 0 1 ... n menos 1
+si conocemos el resto de un numero podemos calcular el resto del numero al agregar un digito
+
+agregar 0 da resto igual a resto por 10 modulo n
+agregar 1 da resto igual a resto por 10 mas 1 modulo n
+
+Asi el problema se transforma en recorrer un grafo de restos
+*/
 
 constexpr int mxN = 1e5 + 100;
 vector<int> G[mxN];
@@ -71,7 +82,7 @@ signed main() {
 
     string ans;
     for (int c = 0; c != -1; c = parent[c])
-      ans.push_back(digit[c]);
+      ans.pb(digit[c]);
 
     reverse(all(ans));
     cout << ans << endl;
